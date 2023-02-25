@@ -1,0 +1,15 @@
+CLI -> Command Line Interface
+Command line -> somewhere on a computer (phone or tablet) where you can type commands.
+terminal (is an application) -> application that allows you to type in commands. 
+console -> sometimes used instead of terminal  (like your browse console)
+shell -> software running inside of a terminal that allows you to interact with the OS. You can run
+	   different shells on a terminal. (like powershell, fish, zshell, bash shell etc..) 
+
+prompt -> the characters before the cursur on each new command line. 
+	    (the default prompt will be different per shell and can be configured).
+REPL (= Read, Evaluate, Print, Loop->  (the command line for a programming language). when you enter the programming
+	  language in your shell then you enter the REPL for that language. (it has its specific command line that
+        can understand the commands in that language).
+
+
+
