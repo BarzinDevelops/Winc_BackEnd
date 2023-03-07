@@ -30,3 +30,10 @@
 # print(chr(2192))
 # chr(2192)
 
+# def initials(name):
+#     first = name[:name.find(' ')].capitalize()
+#     last = name[name.find(' ')+1:].capitalize()
+#     return f'{first} {last} '
+
+# print(initials('barzin frozandehfar'))
+# print(initials('b ghaVIM'))
