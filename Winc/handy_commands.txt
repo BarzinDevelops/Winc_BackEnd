@@ -1,0 +1,8 @@
+how to clear screen in python REPL:
+
+# enter this three statements in your REPL and you can than 
+# use 'clear()' to clear the terminal screen where the REPL is running:
+
+import os
+clear = lambda: os.system('cls')
+clear()
