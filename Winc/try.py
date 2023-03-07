@@ -5,9 +5,9 @@
 #      type('pi') -> {type('pi')}
 # """)
 
-some_number = 5
-another_number = 9.81
-some_string = 'Hello world'
+# some_number = 5
+# another_number = 9.81
+# some_string = 'Hello world'
 
 # print(f"""
 #      some_number -> {type(some_number)}
@@ -28,4 +28,5 @@ some_string = 'Hello world'
 
 
 # print(chr(2192))
-chr(2192)
+# chr(2192)
+
