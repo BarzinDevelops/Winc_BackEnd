@@ -13,3 +13,32 @@ REPL (= Read, Evaluate, Print, Loop->  (the command line for a programming langu
 
 
 
+
+_______________________________________________List of Precedence_______________________________________
+The concept of precedence in programming works much like it does in mathematics: 
+if you have addition (+) and multiplication (*) in the same statement, multiplication binds more strongly.
+
+hierarchy ordered from most to least highest precedence (binding):
+
+( )					Parenthesizing
+[ ]					Indexing/slicing
+**					Exponentiation
+*, /, //, %				Multiplication, division, floor division and modulus
++, -					Addition and subtraction
+in, is, <, ==, !=, etc.		Relational operators and tests for membership
+not					Boolean NOT
+and					Boolean AND
+or					Boolean OR
+
+_________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+

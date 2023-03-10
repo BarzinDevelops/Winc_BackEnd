@@ -1,3 +1,4 @@
+'''
 
 # print(f"""
 #      type(3) -> {type(3)}
@@ -37,3 +38,7 @@
 
 # print(initials('barzin frozandehfar'))
 # print(initials('b ghaVIM'))
+'''
+
+# --------------------------------------------
+
