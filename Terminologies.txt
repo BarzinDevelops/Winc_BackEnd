@@ -29,10 +29,27 @@ in, is, <, ==, !=, etc.		Relational operators and tests for membership
 not					Boolean NOT
 and					Boolean AND
 or					Boolean OR
+__________________________________________________________________________________________________________
+__________________________________Expression And Statements => definitions:_______________________________
 
-_________________________________________________________________________________________________________
+An expression is something that represents a value. For example:
+
+# Represents 2
+1 + 1
+
+# Represents "Hello, Preeti!'
+greet('Preeti')
 
 
+A statement is any complete instruction that the Python interpreter can execute. 
+Statements can consist of one or more expressions. 
+For example: number = 3 is one statement, and so is this:
+
+number = (1 + 2 + 3 +
+     4 + 5 + 6 + 
+     int('5'))
+
+________________________________________________________________________________________________________________
 
 
 
