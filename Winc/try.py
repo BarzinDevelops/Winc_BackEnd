@@ -76,37 +76,17 @@ Grass status
     Short: False
 
 """
-def farm_action(weather, time_of_day, cow_milk_stat, loc_cows, season, slurry_tank, grass_stat):
 
-    action = 'wait'
+# --------------------------------------------------------
 
-    if (loc_cows == 'pasture' and (time_of_day == 'night' or weather == 'rainy')):
-        action = 'take cows to cowshed'
-        # return action
+party_location =    'inside' if 1 + 2 == 5 or 3 ** 3 == 9\
+                    else 'yard' if bool(2//5) is True else\
+                    False if True else 'restaurant'
 
-    elif (cow_milk_stat == True):
-        if (loc_cows == 'pasture'):
-            action = 'take cows to cowshed\nmilk cows\ntake cows back to pasture'
-        else:
-            action = 'milk cows'
-        print("ACTION ==>> ", action, "\n-----------------")
-        return action
-    elif (slurry_tank == True and weather != 'sunny' and weather != 'windy'):
-        if (loc_cows == 'pasture'):
-            action = 'take cows to cowshed\nfertilize pasture\ntake cows back to pasture'
-        else:
-            action = 'fertilize pasture'
-        # return action
-    elif (grass_stat == True and season == 'spring' and weather == 'sunny'):
-        if (loc_cows == 'pasture'):
-            action = 'take cows to cowshed\nmow grass\ntake cows back to pasture'
-        else:
-            action = 'mow grass'
-        # return action
+# print(f"party_location = ", party_location)
 
-    return action
+tryThis = f"""  this is line 1
+                \bsome \bthis is line 2
+                how are these printed now?"""
 
-print(farm_action('rainy', 'night', False, 'cowshed', 'winter', True, True))
-print(farm_action('rainy', 'night', False, 'cowshed', 'winter', False, True))
-print(farm_action('windy', 'night', True, 'cowshed', 'winter', True, True))
-print(farm_action('sunny', 'day', True, 'pasture', 'spring', False, True))
+print(f"tryThis => {tryThis}")
