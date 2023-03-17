@@ -50,7 +50,13 @@ number = (1 + 2 + 3 +
      int('5'))
 
 ________________________________________________________________________________________________________________
+Not all words are available for use in your code. Some words are reserved, they are keywords claimed by Python itself.
+For a list of all reserved keywords, type this in a REPL:
 
+>>> import keyword
+>>> keyword.kwlist
+
+_______________________________________________________________________________________________________________
 
 
 
