@@ -77,16 +77,4 @@ Grass status
 
 """
 
-# --------------------------------------------------------
-
-party_location =    'inside' if 1 + 2 == 5 or 3 ** 3 == 9\
-                    else 'yard' if bool(2//5) is True else\
-                    False if True else 'restaurant'
-
-# print(f"party_location = ", party_location)
-
-tryThis = f"""  this is line 1
-                \bsome \bthis is line 2
-                how are these printed now?"""
-
-print(f"tryThis => {tryThis}")
+# --------------------------------------------
