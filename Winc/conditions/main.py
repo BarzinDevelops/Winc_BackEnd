@@ -43,30 +43,25 @@ def farm_action(weather, time_of_day, cow_milking_status, location_cows, season,
     action = "wait"
     if location_cows == 'pasture' and (time_of_day == 'night' or weather == 'rainy'):
         action = "take cows to cowshed"
-        # return action
-    
-    if cow_milking_status:
+
+    elif cow_milking_status:
         if location_cows == 'cowshed':
             action =  "milk cows"
         if location_cows == 'pasture':
             action = f"take cows to cowshed\nmilk cows\ntake cows back to pasture"
-        return action   # WAAROM moet ik hier een return doen? is nergens anders nodig!
-        # print("action =>", action)
         
-    if slurry_tank:
+    elif slurry_tank:
         if location_cows != 'cowshed':    
             action = "take cows to cowshed"
         if (weather != 'sunny' and weather != 'windy' ):
             action =  "fertilize pasture"
-        # return action
     
-    if grass_status and (season == 'spring' and weather == 'sunny'):
+    elif grass_status and (season == 'spring' and weather == 'sunny'):
         if location_cows != 'pasture':
             action = 'mow grass'
         else:
             action = 'take cows to cowshed\nmow grass\nake cows back to pasture'
-        # return action     
-     
+                 
     return action    
     
 print(farm_action('rainy', 'night', False, 'cowshed', 'winter', True, True))
