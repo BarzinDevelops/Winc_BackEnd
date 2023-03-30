@@ -44,12 +44,25 @@ def most_vowels(countries):
 
 
 
+def alphabet_set(countries):
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    collected = []
+    for country in countries:
+        if alphabet != []:
+            for char in country:
+                if char.lower() in alphabet:
+                    alphabet.remove(char.lower())
+                    if country not in collected:
+                        collected.append(country)
+        else:
+            return collected
+     
+
 # This block is only run if this file is the entrypoint; python main.py
 # It is not run if it is imported as a module: `from main import *`
 if __name__ == "__main__":
     countries = get_countries()
 
     """ Write the calls to your functions here. """
-    print(most_vowels(countries))
-    # most_vowels(countries)
+
     

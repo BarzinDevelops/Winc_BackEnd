@@ -6,3 +6,13 @@ how to clear screen in python REPL:
 import os
 cls = lambda: os.system('cls')
 cls()
+
+
+--------------Get solutions------------------------------
+Als je opdracht gehaald hebt zet deze command in terminal
+for the solution:
+
+
+wincpy solve [naam van de opdracht]
+
+bijvoorbeeld-> wincpy solve variables

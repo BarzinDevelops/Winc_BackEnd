@@ -146,3 +146,15 @@ print(f"len(shortest_names(countries)) -> {len(shortest_names(countries))}")
 ['South Georgia and the South Sandwich Islands', 'United States Minor Outlying Islands', 'Micronesia, Federated States of']
 
 """
+alfabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+
+list2 = ['A', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# print(alfabet == list2)
+# print(list("abcdefghijklmnopqrstuvwxyz"))
+
+first_list = ['Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Anguilla', 'Azerbaijan', 'Bolivia', 'Botswana', 'British Indian Ocean Territory', 'Burkina Faso', 'Cape Verde', 'Equatorial Guinea', 'Luxembourg']
+
+print(len(first_list))
+list_first = ['Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Anguilla', 'Azerbaijan', 'Bolivia', 'Botswana', 'British Indian Ocean Territory', 'Burkina Faso', 'Cape Verde', 'Equatorial Guinea', 'Luxembourg']
