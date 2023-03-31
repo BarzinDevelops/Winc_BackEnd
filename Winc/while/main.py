@@ -32,9 +32,19 @@ def num_joey_facts():
                 num_joey_facts +=1   
     return num_joey_facts
 
+
+def koala_weight():
+    search_weight = True
+    fact = random_koala_fact().lower()
+    while 'kg' not in fact:
+        fact = random_koala_fact().lower()
+    return int(fact[fact.find('kg')-2:fact.find('kg')])
+        
+
 # This block is only executed if this script is run directly (python main.py)
 # It is not run if you import this file as a module.
 if __name__ == "__main__":
-    print(f"")
+    fact = koala_weight()
+
 
 
