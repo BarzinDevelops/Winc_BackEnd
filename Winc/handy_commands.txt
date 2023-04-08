@@ -43,4 +43,6 @@ Entries in a .gitignore or exclude file have no effect on files that Git already
 Console
 
 Copy
-git rm --cached <file path>
+git rm --cached <file path> 
+
+this is new!!!
