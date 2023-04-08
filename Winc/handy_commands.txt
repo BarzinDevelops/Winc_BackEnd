@@ -45,4 +45,3 @@ Console
 Copy
 git rm --cached <file path> 
 
-this is new!!!
