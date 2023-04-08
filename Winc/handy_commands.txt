@@ -16,3 +16,31 @@ for the solution:
 wincpy solve [naam van de opdracht]
 
 bijvoorbeeld-> wincpy solve variables
+
+
+-------------------------Git handy commands -----------------------
+
+Use Git update-index to ignore changes
+Sometimes it's convenient to temporarily stop tracking a local repo file and have Git ignore changes to the file. For example, you might want to customize a settings file for your development environment without the risk of committing your changes. To do so, you can run the git update-index command with the skip-worktreeflag:
+
+Console
+
+Copy
+git update-index --skip-worktree <file path>
+To resume tracking, run the git update-index command with the --no-skip-worktree flag.
+
+Or, you can temporarily stop tracking a file and have Git ignore changes to the file by using the git update-index command with the assume-unchanged flag. This option is less effective than the skip-worktreeflag, because the assume-unchanged flag can be reverted by a Git pull operation that changes file content.
+
+Console
+
+Copy
+git update-index --assume-unchanged <file path>
+To resume tracking, run the git update-index command with the --no-assume-unchanged flag.
+
+Use Git rm to ignore changes
+Entries in a .gitignore or exclude file have no effect on files that Git already tracks. Git tracks files that you've previously committed. To permanently remove a file from the Git snapshot so that Git no longer tracks it, but without deleting it from the filesystem, run the following commands:
+
+Console
+
+Copy
+git rm --cached <file path>
