@@ -45,3 +45,11 @@ Console
 Copy
 git rm --cached <file path> 
 
+------------------------------------------------------------------------
+ # to print a nice json look dictionary with also some ------------ seperation,
+ # import the json library and use the given print statement. 
+
+ import json
+ print(f"{json.dumps(YourDictionary, indent=4)}\n{'--'*30}")
+
+ ------------------------------------------------------------------------------

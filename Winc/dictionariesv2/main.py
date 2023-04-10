@@ -5,6 +5,7 @@ __winc_id__ = "00a4ab32f1024f5da525307a1959958e"
 __human_name__ = "dictionariesv2"
 
 # Add your code after this line
+import json
 def create_passport(name, date_of_birth, place_of_birth, height, nationality):
     passport = {
         "name": name,
@@ -17,27 +18,51 @@ def create_passport(name, date_of_birth, place_of_birth, height, nationality):
 
 def add_stamp(passport, country):
     if 'stamps' in passport:
-        print(f"stamps exists already in passport!")
         if country not in passport['stamps']:
-            print(f"But '{country}' doesn't yet exist as a stamp in the 'stamps'.\nAdding {country}....")
             passport['stamps'].append(country)
-            print(f"{country} stamp added to passport!\n{'--'*30}")
-            print(f"Now this is the new passport 'stamps' values: {passport['stamps']}")
-        else:
-            print(f"{country} stamp already exists in passport stamps!")
     else:
-        print(f"Current passport items -> {passport}\n{'--'*30}")
-        print("creating 'stamps' key in passport...")
         passport['stamps'] = [country]
-        print(f"{country} stamp added to passport!\n{'--'*30}")
-        print(f"Passport items after adding the 'stamps' key and value -> {passport}")
     return passport
     
-
+def add_biometric_data(passport, name_biometric_data, value_biometric_data, date_biometric_data):
+    if 'biometric' in passport:
+        if name_biometric_data in passport['biometric']:
+            passport['biometric'][name_biometric_data].update(
+                {
+                    "date":  date_biometric_data,
+                    "value": value_biometric_data
+                },
+            )
+        else:
+            passport['biometric'][name_biometric_data] = { 
+                    "date":  date_biometric_data,
+                    "value": value_biometric_data
+            }
+    else:
+        passport['biometric'] = { 
+            name_biometric_data : {
+                "date":  date_biometric_data,
+                "value": value_biometric_data
+            }
+        } 
+    return passport
 
 if __name__ == "__main__":
     countries = get_countries()
-    myPassport = create_passport("Glenn", "1990-04-19","Frankfurt", 1.80, "Germany")
-    add_stamp(myPassport, 'France')
-
-    
+    omari = create_passport("Omari Muchumba", "1995-07-16", "Kampala", 184.31, "Uganda")
+    omari = add_biometric_data(omari, "eye_color_left", "blue", "2020-05-05")
+    omari = add_biometric_data(omari, "eye_color_right", "green", "2020-05-05")
+    fingerprint_data = {
+        "left_pinky": "2378945",
+        "left_ring": "2349081",
+        "left_middle": "132890",
+        "left_index": "9823234",
+        "left_thumb": "0924131",
+        "right_thumb": "6234923",
+        "right_index": "13249734",
+        "right_middle": "34023784",
+        "right_ring": "12332538",
+        "right_pinky": "32458970",
+    }
+    omari = add_biometric_data(omari, "finger_prints", fingerprint_data, "2022-01-12")
+    print(f"{json.dumps(omari, indent=4)}\n{'--'*30}")
