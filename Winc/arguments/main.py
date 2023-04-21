@@ -41,3 +41,11 @@ print(force(2,'moon'))
 
 
 
+# Part3: Gravity
+
+def pull(m1, m2, d):
+    gravitational_attraction = 6.674 *  (1/(10**11))
+    mass_distance = (m1 * m2) / (d ** 2)
+    return gravitational_attraction * mass_distance
+
+print(pull(800, 1500, 3))
