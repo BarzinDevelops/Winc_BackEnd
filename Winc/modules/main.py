@@ -4,7 +4,7 @@ __human_name__ = 'modules'
 
 # Add your code after this line
 #1: import a module that prints the Zen of Python(opens in a new tab)
-# import this
+import this
 
 #2: write function wait(seconds) that utilizes time module to wait a given time
 import time
@@ -26,8 +26,14 @@ def iso_now():
     date_formated = currentDateAndTime.strftime('%Y-%m-%dT%H:%M')
     return date_formated
 
+#5: Implement a function platform that takes no arguments and returns a 
+# string that shows which platform we are on.
+def platform():
+    import sys
+    return sys.platform
 
 if __name__ == '__main__':
-    # wait(3)
-    # print(my_sin(46))
-    print(iso_now())
+    wait(3)
+    my_sin(46)
+    iso_now()
+    platform()
