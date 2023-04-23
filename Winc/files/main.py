@@ -3,6 +3,7 @@ __human_name__ = "files"
 
 #--------------------------------------------
 import os, shutil
+from zipfile import ZipFile as zf
 
 # Part1: creat function clean_cache which creates a directory 'cache'
 # if it doesn't exist, but removes all files and subfolders within 
@@ -24,7 +25,20 @@ def clean_cache():
                     shutil.rmtree(file_path, ignore_errors=True)
     else:
         os.makedirs(cache_dir)
-        
-        
+
+# Part2: cache_zip: takes a zip file path (str) and a cache dir 
+# path (str) as arguments, in that order. The function then 
+# unpacks the indicated zip file into a clean cache folder.
+# You can test this with provided: "data.zip file".
+
+def cache_zip(zip_path, cache_path):
+    with zf(zip_path, 'r') as datazip:
+        datazip.extractall(os.path.join(cache_path))
+
+ 
 if __name__ == "__main__":
     clean_cache()
+    zip_path = "files\data.zip"
+    cache_path = "files\cache"
+    cache_zip(zip_path, cache_path)
+    
