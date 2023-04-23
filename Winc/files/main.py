@@ -50,10 +50,26 @@ def cached_files():
             file_list.append(entry.path)
     return file_list
 
+# Part4: find_password: takes the list of file paths from 
+# cached_files as an argument. This function should read 
+# the text in each one to see if the password is in there. 
+# Surely there should be a word in there to indicate the 
+# presence of the password? Once found, find_password 
+# should return this password string.
+
+def find_password(file_list):
+    for path in file_list:
+        with open(path, 'r') as file:
+            file_content = file.readlines()
+            for line in file_content:
+                if 'password' in line.lower():
+                    line = line[line.find(' '):]
+                    return line.strip()
 
 if __name__ == "__main__":
     clean_cache()
     zip_path = "files\data.zip"
     cache_path = "files\cache"
     cache_zip(zip_path, cache_path)
-    print(f"cached_files() => {cached_files()}")
+    path_list = cached_files()
+    find_password(path_list)
