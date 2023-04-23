@@ -35,10 +35,25 @@ def cache_zip(zip_path, cache_path):
     with zf(zip_path, 'r') as datazip:
         datazip.extractall(os.path.join(cache_path))
 
- 
+
+# Part3: cached_files: takes no arguments and returns a list of 
+# all the files in the cache. The file paths should be specified 
+# in absolute terms. Search the web for what this means! No 
+# folders should be included in the list. You do not have to 
+# account for files within folders within the cache directory.
+
+def cached_files():
+    absolute_path = os.path.abspath("files\cache")
+    file_list = []
+    for entry in os.scandir(absolute_path):
+        if entry.is_file():
+            file_list.append(entry.path)
+    return file_list
+
+
 if __name__ == "__main__":
     clean_cache()
     zip_path = "files\data.zip"
     cache_path = "files\cache"
     cache_zip(zip_path, cache_path)
-    
+    print(f"cached_files() => {cached_files()}")
