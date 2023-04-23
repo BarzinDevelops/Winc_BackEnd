@@ -4,7 +4,8 @@ __human_name__ = 'modules'
 
 # Add your code after this line
 #1: import a module that prints the Zen of Python(opens in a new tab)
-import this
+
+# import this
 
 #2: write function wait(seconds) that utilizes time module to wait a given time
 import time
@@ -32,8 +33,21 @@ def platform():
     import sys
     return sys.platform
 
+#6: Create a new file greet.py, and in that file implement a function supergreeting 
+# that takes a name as an argument (str) and returns a string of the form 'Hellooo...ooo, Bob!'. 
+# Then import this function in main.py and write a function supergreeting_wrapper that takes the 
+# exact same type of argument, calls supergreeting with it and returns the result.
+
+def supergreeting_wrapper(name):
+    from greet import supergreeting as sg
+    return sg(name)
+    
+
+
+
 if __name__ == '__main__':
-    wait(3)
-    my_sin(46)
-    iso_now()
-    platform()
+    # wait(3)
+    # my_sin(46)
+    # iso_now()
+    # platform()
+    print(supergreeting_wrapper('barry'))
