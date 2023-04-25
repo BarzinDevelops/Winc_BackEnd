@@ -8,11 +8,11 @@ __human_name__ = "errors"
 # Test your functions here to make sure the functionality remains the same.
 def main():
     foo = list(range(10))
-    print(
-        get_item_from_list(foo, 9),
-        get_item_from_list(foo, -1),
-        get_item_from_list(foo, 10),
-    )
+    print(foo)
+    print(get_item_from_list(foo, 3))
+    print(get_item_from_list(foo, '8e'))
+    print(get_item_from_list(foo, 10))
+
     ...
 
 
@@ -48,13 +48,12 @@ def read_file(filename):
         return None """
     
 def get_item_from_list(l, index):
-    max_index = len(l) - 1
-    min_index = -1 - max_index
     try:
-        index <= max_index and index >= min_index
         return l[index]
-    except:
+    except IndexError:
         return None
+    except Exception as err:
+        return f"Your input caused this error:\n{err}"
 
 if __name__ == "__main__":
     main()
