@@ -7,14 +7,20 @@ __human_name__ = "errors"
 
 # Test your functions here to make sure the functionality remains the same.
 def main():
-    foo = list(range(10))
-    print(foo)
+    """foo = list(range(10))
     print(get_item_from_list(foo, 3))
     print(get_item_from_list(foo, '8e'))
-    print(get_item_from_list(foo, 10))
-
+    print(get_item_from_list(foo, 10)) """
+    testfile1 = f'errors\\test.txt'
+    testfile2 = f'errors\\dummy.py'
+    print(read_file(testfile1))
+    print(read_file(testfile2))
+    
     ...
-
+# print(os.path.exists('errors\\test.txt'))
+# with open('errors\\test.txt', 'r') as f:
+#     content = f.read()
+#     print(content)
 
 """Change the three functions below from Look Before You Leap (LBYL) to Easier
 to Ask for Forgiveness than Permission (EAFP)"""
@@ -31,11 +37,20 @@ def add(x, y):
 
 # Returns the contents of the file at 'filename', or an empty string if the
 # file does not exist
-def read_file(filename):
+""" def read_file(filename):
     if os.path.exists(filename):
         return open(filename, "r").read()
     else:
+        return "" """
+
+
+def read_file(filename):
+    try:
+        return open(filename, "r").read()
+    except FileNotFoundError:
         return ""
+    except Exception as e:
+        return f"ERROR: {e}"
 
 
 # Returns item at `index` from list `l` if possible, otherwise returns None
