@@ -11,30 +11,32 @@ def main():
     print(get_item_from_list(foo, 3))
     print(get_item_from_list(foo, '8e'))
     print(get_item_from_list(foo, 10)) """
-    testfile1 = f'errors\\test.txt'
-    testfile2 = f'errors\\dummy.py'
-    print(read_file(testfile1))
-    print(read_file(testfile2))
-    
+    """ testfile1 = f'errors\\test.txt'
+        testfile2 = f'errors\\dummy.py'
+        print(read_file(testfile1))
+        print(read_file(testfile2)) """
+    print(add(4, 2))
+    print(add("Hi",2))
     ...
-# print(os.path.exists('errors\\test.txt'))
-# with open('errors\\test.txt', 'r') as f:
-#     content = f.read()
-#     print(content)
 
-"""Change the three functions below from Look Before You Leap (LBYL) to Easier
-to Ask for Forgiveness than Permission (EAFP)"""
+"""Change the three functions below from Look Before You Leap (LBYL) to Easier to Ask for Forgiveness than Permission (EAFP)"""
 
 
 # Returns the addition of x and y if it's defined, otherwise returns 0
-def add(x, y):
+""" def add(x, y):
     if type(x) is str and (type(y) is int or type(y) is float):
         return 0
     elif type(y) is str and (type(x) is int or type(x) is float):
         return 0
-    return x + y
+    return x + y """
 
 
+def add(x,y):
+    try:
+        return x + y
+    except:
+        return 0
+    
 # Returns the contents of the file at 'filename', or an empty string if the
 # file does not exist
 """ def read_file(filename):
