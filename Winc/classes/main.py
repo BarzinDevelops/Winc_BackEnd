@@ -37,9 +37,15 @@ class Commentator:
     def __init__(self, name):
         self.name = name
         
+    def sum_player(self, player):
+        speed = getattr(player, 'speed')
+        endurance = getattr(player, 'endurance')
+        accuracy = getattr(player, 'accuracy')
+        return speed + endurance + accuracy
 
 if __name__ == '__main__':
-    # pl1 = Player('pl1',0.7, 0.9, 0.9)
+    pl1 = Player('pl1',0.7, 0.9, 0.9)
     ray = Commentator('Ray Hudson')
-    print(ray.name)
+    # print(ray.name)
+    print(ray.sum_player(pl1))
     
