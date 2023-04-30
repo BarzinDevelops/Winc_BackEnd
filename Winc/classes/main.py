@@ -42,10 +42,43 @@ class Commentator:
         endurance = getattr(player, 'endurance')
         accuracy = getattr(player, 'accuracy')
         return speed + endurance + accuracy
-
+    
+    def compare_players(self, pl1, pl2, pl_arg):
+        winner = ''
+        pl1_score = getattr(pl1, pl_arg)
+        pl2_score = getattr(pl2, pl_arg)
+        pl1_name = getattr(pl1, 'name')
+        pl2_name = getattr(pl2, 'name')
+        pl1_strength_method = getattr(pl1, 'strength')
+        pl2_strength_method = getattr(pl2, 'strength')
+        p1_sum = self.sum_player(pl1)
+        p2_sum = self.sum_player(pl2)
+        
+        if pl1_score == pl2_score:
+            if pl1_strength_method()[1] == pl2_strength_method()[1]:
+                if p1_sum == p2_sum:
+                    return f"These two players might as well be twins!"
+                elif p1_sum > p2_sum:
+                        return pl1_name
+                else: 
+                    return pl2_name
+            elif pl1_strength_method()[1] > pl2_strength_method()[1]:
+                return pl1_name
+            else: 
+                return pl2_name    
+        else:
+            if pl1_score > pl2_score:
+                return pl1_name
+            else: 
+                return pl2_name  
+                
+        
+        
 if __name__ == '__main__':
-    pl1 = Player('pl1',0.7, 0.9, 0.9)
+    # pl1 = Player('pl1',0.7, 0.9, 0.9)
+    # pl2 = Player('pl2', 0.8, 0.8, 1)
     ray = Commentator('Ray Hudson')
-    # print(ray.name)
-    print(ray.sum_player(pl1))
+    alice = Player('Alice', 0.3, 0.2, 0.5)
+    bob = Player('Bob', 0.3, 0.2, 0.5)
+    print(ray.compare_players(alice, bob, 'speed'))
     
