@@ -38,47 +38,48 @@ class Commentator:
         self.name = name
         
     def sum_player(self, player):
-        speed = getattr(player, 'speed')
-        endurance = getattr(player, 'endurance')
-        accuracy = getattr(player, 'accuracy')
-        return speed + endurance + accuracy
+        return sum([ getattr(player, 'speed'),
+                     getattr(player, 'endurance'),
+                     getattr(player, 'accuracy')])
     
-    def compare_players(self, pl1, pl2, pl_arg):
-        winner = ''
-        pl1_score = getattr(pl1, pl_arg)
-        pl2_score = getattr(pl2, pl_arg)
-        pl1_name = getattr(pl1, 'name')
-        pl2_name = getattr(pl2, 'name')
-        pl1_strength_method = getattr(pl1, 'strength')
-        pl2_strength_method = getattr(pl2, 'strength')
-        p1_sum = self.sum_player(pl1)
-        p2_sum = self.sum_player(pl2)
+    def compare_players(self, pl1, pl2, pl_attr):      
+        # compare based on player attribute: 'speed', 'endurance' and 'accuracy' 
+        if getattr(pl1, pl_attr) > getattr(pl2, pl_attr):
+            return pl1.name
+        elif getattr(pl2, pl_attr) > getattr(pl1, pl_attr): 
+            return pl2.name 
         
-        if pl1_score == pl2_score:
-            if pl1_strength_method()[1] == pl2_strength_method()[1]:
-                if p1_sum == p2_sum:
-                    return f"These two players might as well be twins!"
-                elif p1_sum > p2_sum:
-                        return pl1_name
-                else: 
-                    return pl2_name
-            elif pl1_strength_method()[1] > pl2_strength_method()[1]:
-                return pl1_name
-            else: 
-                return pl2_name    
-        else:
-            if pl1_score > pl2_score:
-                return pl1_name
-            else: 
-                return pl2_name  
+        # compare based on result of Player -> strength() method:
+        pl1_strength = getattr(pl1, 'strength')
+        pl2_strength = getattr(pl2, 'strength')
+        if pl1_strength()[1] > pl2_strength()[1]:
+            return pl1.name
+        elif pl2_strength()[1] > pl1_strength()[1]:
+            return pl2.name
+        
+        #  compare based on result of self.strength() method:
+        if self.sum_player(pl1) > self.sum_player(pl2):
+            return pl1.name
+        elif self.sum_player(pl2) > self.sum_player(pl1):
+                return pl2.name
+            
+        # if all comparisons result equal:
+        return f"These two players might as well be twins!" 
                 
         
         
 if __name__ == '__main__':
-    # pl1 = Player('pl1',0.7, 0.9, 0.9)
-    # pl2 = Player('pl2', 0.8, 0.8, 1)
-    ray = Commentator('Ray Hudson')
-    alice = Player('Alice', 0.3, 0.2, 0.5)
-    bob = Player('Bob', 0.3, 0.2, 0.5)
-    print(ray.compare_players(alice, bob, 'speed'))
+    alice = Player("Alice", 0.8, 0.2, 0.6)
+    bob = Player("Bob", 0.5, 0.2, 0.6)
+    candice = Player("Candice", 0.8, 0.2, 0.7)
+    dirk = Player("Dirk", 0.5, 0.2, 0.6)
+    eric = Player("Eric", 0.5, 0.2, 0.6)
     
+    print(alice.strength())
+    print(bob.introduce())
+    
+    ray = Commentator('Ray Hudson')
+
+    print(ray.compare_players(alice, bob, 'speed'))
+    print(ray.compare_players(alice, candice, "accuracy"))
+    print(ray.compare_players(dirk, eric, "speed"))
