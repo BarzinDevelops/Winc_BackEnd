@@ -10,6 +10,6 @@ def flatten_dict(received_dict):
 
 if __name__ == '__main__':
     # print(get_none())
-    print(f"is of type list? -> {type(flatten_dict({})) is list}")
-    print(f"returns values of dict? -> {flatten_dict({'a': 42, 'b': 3.14})}")
-    print(f"has [values] as part of dict items? -> {flatten_dict({'a': [42, 350], 'b': 3.14})}")
+    # print(f"is of type list? -> {type(flatten_dict({})) is list}")
+    # print(f"returns values of dict? -> {flatten_dict({'a': 42, 'b': 3.14})}")
+    # print(f"has [values] as part of dict items? -> {flatten_dict({'a': [42, 350], 'b': 3.14})}")
