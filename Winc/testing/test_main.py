@@ -4,11 +4,11 @@ import pytest, main
 def test_get_none():
     assert main.get_none() == None
 
-# Part2:
+# Part2_1:
 
-# check if this returns a list when given a dict:
+# check if the value returned by flatten_dict is a list at all:
 def test_flatten_dict():
-    assert main.flatten_dict({}) is list
+    assert type(main.flatten_dict({})) is list
 
 
 # check if it returns list with values of the given dict:
