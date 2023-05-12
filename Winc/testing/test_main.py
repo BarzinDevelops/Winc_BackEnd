@@ -48,3 +48,5 @@ def test_flatten_dict_challenge1():
 def test_flatten_dict_challenge2():
     assert main.flatten_dict_challenge({'a': [{'inner_inner_a': 42}]}) == [42]
 
+def test_flatten_dict_challenge3():
+    assert main.flatten_dict_challenge({'a': {'inner_a': 42, 'inner_b': 350}, 'b': 3.14, 'my_twisted_list_dict': [ { 'dict_in_list_1': 'kan_dit1', 'dict_in_list_2': 888, 'nog_een_moeilijke': 999 }, {'a': [ {'inner_inner_a': [33, 'appeltje', 'eitje']} ]} ] })
