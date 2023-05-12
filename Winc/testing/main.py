@@ -84,7 +84,6 @@ if __name__ == '__main__':
     print('-'*20)
     print("\ncase5: {'a': [{'inner_inner_a': 42}]}\n\nExpected result: [42]")
 
-    flatten_dict({'a': [{'inner_inner_a': 42}]})
     result5 = flatten_dict_challenge({'a': [{'inner_inner_a': 42}]})
 
     print(f"my result5: {result5}")
