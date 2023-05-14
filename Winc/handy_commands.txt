@@ -53,3 +53,20 @@ git rm --cached <file path>
  print(f"{json.dumps(YourDictionary, indent=4)}\n{'--'*30}")
 
  ------------------------------------------------------------------------------
+
+Tips over Testen met 'pytest' :
+
+dit is een voorbeeld van een testcase.
+testcases horen in een foleder genaamd: 'testing' te zitten.
+bestandsnamen beginnen allemaal met 'test_' en dan de rest:
+voorbeeld -> test_blabla.py 
+bestand dat de functies bevat van die testdoc heet dan: blabla.py
+
+Hier is voorbeeld van een testcase:
+
+def test_flatten_dict_with_values():
+    # om je eigen print ongeacht passed/failed te kunnen zien: 
+    # geef volgende commando in terminal ->  pytest -rP -v
+    # print(f"Result of test2: {main.flatten_dict({'a': 42, 'b': 3.14})}")
+    assert main.flatten_dict({'a': 42, 'b': 3.14}) == [42, 3.14]
+    
