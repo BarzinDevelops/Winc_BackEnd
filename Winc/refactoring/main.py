@@ -1,7 +1,5 @@
 __winc_id__ = "9920545368b24a06babf1b57cee44171"
 __human_name__ = "refactoring"
-
-
 class Homeowner:
     def __init__(self, name, address, needs):
         self.name = name,
@@ -15,18 +13,9 @@ class Homeowner:
     def get_contracts(self, specialists):
         for need in self.needs:
             need.lower()
-            if need == "electrician":
-                best_electrician = best_offer(specialists['electricians'])
-                self.contracts.append(best_electrician) 
-            elif need == "painter":
-                best_painter = best_offer(specialists['painters'])
-                self.contracts.append(best_painter) 
-            elif need == "plumber":
-                best_plumber = best_offer(specialists['plumbers'])
-                self.contracts.append(best_plumber) 
+            best = best_offer(specialists[need])
+            self.contracts.append(best)
         return [contractor for contractor in self.contracts]
-
-
 class Specialist:
     def __init__(self, name, price):
         self.name = name
@@ -42,15 +31,7 @@ class Plumber(Specialist):
         super().__init__(name, price)
 
 def best_offer(needed_specialists):
-    best_price = float(needed_specialists[0].price)
-    chosen = {}
-    for needed_specialist in needed_specialists:
-        needed_specialist.price = float(needed_specialist.price)
-        if needed_specialist.price < best_price:
-            best_price = needed_specialist.price
-            chosen = {'name': needed_specialist.name, 'price': needed_specialist.price}    
-    return chosen['name']
-
+    return sorted(needed_specialists, key=lambda x: x.price)[0].name
 
 
 if __name__ == "__main__":
@@ -75,9 +56,9 @@ if __name__ == "__main__":
     
     # available specialists dictionary:
     current_specialists = {
-        "electricians": [Alice, Ahmed, Fatoush],
-        "painters": [Bob, Kees, Leo],
-        "plumbers": [Craig, Henk, Stephan]
+        "electrician": [Alice, Ahmed, Fatoush],
+        "painter": [Bob, Kees, Leo],
+        "plumber": [Craig, Henk, Stephan]
     }
     
     # testing results by printing:
